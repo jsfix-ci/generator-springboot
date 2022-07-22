@@ -1,4 +1,5 @@
 'use strict';
+const { convert } = require('color-convert');
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const _ = require('lodash');
@@ -16,7 +17,7 @@ module.exports = class extends Generator {
     }
 
     logWarn(msg) {
-        log(chalk.keyword('orange')(msg));
+        log(chalk.rgb(...convert.keyword.rgb('orange'))(msg));
     }
 
     logError(msg) {
